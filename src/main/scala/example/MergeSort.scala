@@ -10,3 +10,6 @@ case class UnsortedList[Int](x: List[Int]) extends SortableList[Int]
 /**
  * Define our Algorithm
  */
+object MergeSort {
+  def MergeSort(in: SortableList[Int]) : SortedList[Int] = ???
+}

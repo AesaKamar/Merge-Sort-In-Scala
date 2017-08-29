@@ -17,7 +17,10 @@ object MergeSort {
       case UnsortedList(ints) => ints match {
         case Nil => SortedList(Nil)
         case head::Nil => SortedList(List(head))
-        case head::tail => ???
+        case head::tail =>
+          val lhs = SortedList(List(head))
+          val rhs = MergeSort(UnsortedList(tail))
+          ???
       }
     }
 }

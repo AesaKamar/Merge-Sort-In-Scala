@@ -20,7 +20,9 @@ object MergeSort {
         case head::tail =>
           val lhs = SortedList(List(head))
           val rhs = MergeSort(UnsortedList(tail))
-          ???
+          Merge(lhs, rhs)
       }
     }
+
+  def Merge(lhs: SortedList[Int], rhs: SortedList[Int]): SortedList[Int] = ???
 }

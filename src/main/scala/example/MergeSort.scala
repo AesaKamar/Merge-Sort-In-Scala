@@ -24,5 +24,9 @@ object MergeSort {
       }
     }
 
-  def Merge(lhs: SortedList[Int], rhs: SortedList[Int]): SortedList[Int] = ???
+  def Merge(lhs: SortedList[Int], rhs: SortedList[Int]): SortedList[Int] =
+    (lhs, rhs) match {
+      case (left, SortedList(Nil)) => left
+      case (SortedList(Nil), right) => right
+    }
 }

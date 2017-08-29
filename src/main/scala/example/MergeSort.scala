@@ -28,5 +28,14 @@ object MergeSort {
     (lhs, rhs) match {
       case (left, SortedList(Nil)) => left
       case (SortedList(Nil), right) => right
+      case (SortedList(leftHead::leftTail),
+            SortedList(rightHead::rightTail)) =>
+        SortedList(
+          if(leftHead < rightHead)
+            leftHead
+              :: Merge(SortedList(leftTail), rhs).x
+          else rightHead
+            :: Merge(lhs, SortedList(rightTail)).x
+        )
     }
 }

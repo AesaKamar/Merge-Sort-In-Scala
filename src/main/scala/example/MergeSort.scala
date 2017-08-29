@@ -13,7 +13,11 @@ case class UnsortedList[Int](x: List[Int]) extends SortableList[Int]
 object MergeSort {
   def MergeSort(in: SortableList[Int]): SortedList[Int] =
     in match {
-      case SortedList(x) => SortedList(x)
-      case UnsortedList(x) => ???
+      case SortedList(ints) => SortedList(ints)
+      case UnsortedList(ints) => ints match {
+        case Nil => SortedList(Nil)
+        case head::Nil => SortedList(List(head))
+        case head::tail => ???
+      }
     }
 }
